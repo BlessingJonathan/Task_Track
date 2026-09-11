@@ -1,4 +1,4 @@
-const BASE = '/api';
+const BASE = 'https://taskbutler.onrender.com/api';
 
 async function request(path, options = {}) {
   const res = await fetch(`${BASE}${path}`, {
