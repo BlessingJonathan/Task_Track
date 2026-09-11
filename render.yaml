@@ -9,7 +9,5 @@ services:
     envVars:
       - key: NODE_ENV
         value: production
-    disks:
-      - name: tasktracker-data
-        mountPath: /opt/render/project/src/data
-        sizeGB: 1
+      - key: DATABASE_URL
+        sync: false
