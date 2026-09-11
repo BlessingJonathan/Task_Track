@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: tasktracker
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: NODE_ENV=production node server/index.js
+    healthCheckPath: /api/dashboard
+    envVars:
+      - key: NODE_ENV
+        value: production
+    disks:
+      - name: tasktracker-data
+        mountPath: /opt/render/project/src/data
+        sizeGB: 1
